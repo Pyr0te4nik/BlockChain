@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"StudentDiary.sol": "payPal"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"StudentDiary.sol": {
+			"keccak256": "0xd1d806dfa470c42efe808c9cc19040b6d6c32e3f56e208cf2e5ec004f05ea0f8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://905aa69e58ce3b43c8f2c222055efa06c75da79ab8745a73b99a023414663a5a",
+				"dweb:/ipfs/QmbaBbUw94JBzxRSY3pTbrxZG9iuMzjujTBGBR5got6KkK"
+			]
+		}
+	},
+	"version": 1
+}

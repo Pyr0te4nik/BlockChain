@@ -1,0 +1,66 @@
+{
+	"compiler": {
+		"version": "0.8.35+commit.47b9dedd"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "inc",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "myVal",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"urok3.sol": "Demo"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"urok3.sol": {
+			"keccak256": "0x711b607efa40fafb5bb0ad56679441edd9b0d38f86fde088f3f9c444e9572aea",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8fbc3bc219597b7aa68c1dc4ff8cda661c2edcea3e6b4d866893fc8791ff3be2",
+				"dweb:/ipfs/QmVrLjLaWTb7MfzLMvM739NRWsaHHCUdYFhd9emRQ1SNG4"
+			]
+		}
+	},
+	"version": 1
+}
