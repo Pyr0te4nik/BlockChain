@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.35+commit.47b9dedd"
+		"version": "0.8.30+commit.73712a01"
 	},
 	"language": "Solidity",
 	"output": {
@@ -78,7 +78,7 @@
 		"compilationTarget": {
 			"urok1.sol": "MyShop"
 		},
-		"evmVersion": "osaka",
+		"evmVersion": "prague",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"

@@ -54,12 +54,6 @@ contract StudentDiary {
         return ocenkaStudent;
     }
 
-    function replaceOcenka(
-        string memory replace
-    ) external returns (string memory) {
-        return lesson;
-    }
-
     function swapStatusActive() public {
         statusStudent = true;
     }

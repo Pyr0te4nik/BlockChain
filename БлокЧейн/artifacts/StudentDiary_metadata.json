@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.35+commit.47b9dedd"
+		"version": "0.8.30+commit.73712a01"
 	},
 	"language": "Solidity",
 	"output": {
@@ -9,6 +9,64 @@
 				"inputs": [],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "English",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "Math",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "Russian",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "addressStudent",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			},
 			{
 				"inputs": [],
@@ -28,9 +86,46 @@
 				"name": "egoLesson",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "int256",
 						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
 						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "newOcenka",
+						"type": "string"
+					}
+				],
+				"name": "i",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lesson",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -64,31 +159,12 @@
 			},
 			{
 				"inputs": [],
-				"name": "payForItem",
+				"name": "ocenkaStudent",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "string",
 						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "payments",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -98,17 +174,56 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "bulba",
+						"name": "newOcenka",
 						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "ocenka",
-						"type": "uint256"
 					}
 				],
-				"name": "replace",
-				"outputs": [],
+				"name": "setOcenkaEng",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "newOcenka",
+						"type": "string"
+					}
+				],
+				"name": "setOcenkaMath",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "newOcenka",
+						"type": "string"
+					}
+				],
+				"name": "setOcenkaRus",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -183,13 +298,6 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "withdrawAll",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -205,9 +313,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"StudentDiaryNorm.sol": "StudentDiary"
+			"StudentDiary.sol": "StudentDiary"
 		},
-		"evmVersion": "osaka",
+		"evmVersion": "prague",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -219,12 +327,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"StudentDiaryNorm.sol": {
-			"keccak256": "0xc5c14e6b24722c2af6eb48c46aa27dc3cb1b568f8dbe3c460f3710e5bf03a1c0",
+		"StudentDiary.sol": {
+			"keccak256": "0xfcbc5d1b4741a19f662ed7151dd30d9b8f76ca850af5e680b0204f89eb8688f0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e41537cbd05ec338ef25fd3d7281d71002daba25155f2f604d54b5c5b42dce21",
-				"dweb:/ipfs/QmTCB8VBX94PGUJx32m6XbJyZAA4EDH2ABvSnEg6AX2UM7"
+				"bzz-raw://6de88959109dd3b7a3fde8fa6ecb2dd58574828e6dc020733c7c51872fbdb887",
+				"dweb:/ipfs/QmSMQY94wUiNPcXHggcmhpMusobTXmp1D4axM1R9ZRxwoN"
 			]
 		}
 	},
