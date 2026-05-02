@@ -9,37 +9,53 @@ contract ToDoList {
 
     enum Status { Open, InProgress, Done }
     Status public currentStatus;
+    // mapping(uint => string) public currentStatusik;
 
     bytes public data;
 
-    uint[] public numbers;
+    int[] public numbers;
     uint public len;
-    string[] public tasks;
+    Task[] public tasks;
 
-    function getNumber() public {
-        numbers.push(15);
-        numbers.push(156);
-        numbers.push(1);
-        len = numbers.length;
+    function setData(bytes memory _data) public {
+        data = _data;
     }
 
-    function dynamicTasks() public {
-        tasks.push("idi");
-        tasks.push("na");
-        tasks.push("hui");
-        len = tasks.length;
+    function addNumber(int number) public {
+        numbers.push(number);
     }
 
-    function setData(bytes memory _data) public view returns(bytes memory) {
-
+    function getNumber(uint index) public view returns(int) {
+        return numbers[index];
     }
 
-    // function getNumber(uint number) public view returns(uint) {
-    //     numbers += number;
-    //     return numbers;
-    // }
+    function addTask(string memory text) public {
+        tasks.push(Task(text, false));
+    }
 
-    function addTask(string memory text) external returns(string memory) {
-        tasks = string.concat(tasks, text);
+    function getTask(uint index) public view returns(string memory, bool) {
+        Task memory task = tasks[index];
+        return (task.textTask, task.completeTask);
+    }
+
+    function markDone(uint index) public {
+        tasks[index].completeTask = true;
+    }
+
+    function setStatus(Status newStatus) public {
+        currentStatus = newStatus;
+    }
+
+    function receiveFunds() public payable {
+
+    }
+    
+    function transferTo(address targetAddr, uint amount) public {
+        address payable _to = payable(targetAddr);
+        _to.transfer(amount);
+    }
+
+    function getBalance(address targetAddress) public view returns(uint) {
+        return targetAddress.balance;
     }
 }
