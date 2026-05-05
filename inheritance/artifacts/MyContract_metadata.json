@@ -6,6 +6,17 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"inputs": [],
 				"name": "getBalance",
 				"outputs": [
@@ -58,7 +69,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"urok6.sol": "Balances"
+			"urok6.sol": "MyContract"
 		},
 		"evmVersion": "prague",
 		"libraries": {},

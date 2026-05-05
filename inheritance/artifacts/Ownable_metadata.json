@@ -22,6 +22,19 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_to",
+						"type": "address"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -52,11 +65,11 @@
 	},
 	"sources": {
 		"urok6.sol": {
-			"keccak256": "0x36756d10015139d5159d5a6d51f34eb253a912a7c53a612d9e291cac8b88de45",
+			"keccak256": "0xf58e80db4115513b5c2e800f607b4dd7de689732ad9fc0f9119feb9d5656b250",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://86cad7b2316de27f2c78c5f6b627287b76e10af5e6ca5d38e5cfb3c9ca299f2b",
-				"dweb:/ipfs/QmXP2cygh2dKnVZraEGzwYbsZ7VBP3ctBKyVkJE2tEgWWE"
+				"bzz-raw://ac905e10ce69f12980f6933e7e70cabee91789a48fc6cc14a9e20551f374ebef",
+				"dweb:/ipfs/QmXtM3AwecTAp7JzwjpVBjwoTdcPG2zTgfFdPfxVqDC11D"
 			]
 		}
 	},

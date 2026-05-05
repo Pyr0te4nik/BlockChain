@@ -12,22 +12,36 @@ contract Ownable {
         require(owner == msg.sender, "not an owner!");
         _;
     }
+
+    function withdraw(address payable _to) public virtual onlyOwner {
+        payable(_to).transfer(address(this).balance);
+    }
 }
 
-contract Balances is Ownable {
+abstract contract Balances is Ownable {
     function getBalance() public view onlyOwner returns(uint) {
+
         return address(this).balance;
     }
 
-    function withDraw(address payable _to) public onlyOwner {
-        _to.transfer(address(this).balance);
+    function withdraw(address payable _to) public override virtual {
+        _to.transfer(getBalance());
     }
 }
 
 // Ownable
 // Balances
-// Demo
+// MyContract
 
-contract Demo is Ownable, Balances {
-    
+contract MyContract is Ownable, Balances {
+    constructor(address _owner) {
+        owner = _owner;
+    }
+
+    function withdraw(address payable _to) public override(Ownable, Balances) onlyOwner {
+        //Balances.withdraw(_to);
+        //Ownable.withdraw(_to);
+        require(_to != address(0), "zero addr");
+        super.withdraw(_to);
+    }
 }

@@ -6,6 +6,17 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"inputs": [],
 				"name": "getBalance",
 				"outputs": [
@@ -73,11 +84,11 @@
 	},
 	"sources": {
 		"urok6.sol": {
-			"keccak256": "0x36756d10015139d5159d5a6d51f34eb253a912a7c53a612d9e291cac8b88de45",
+			"keccak256": "0x4e71893bec7afc72c3c3e66467f7386e43f58d949272bfe9a0bd0b0c418b32b7",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://86cad7b2316de27f2c78c5f6b627287b76e10af5e6ca5d38e5cfb3c9ca299f2b",
-				"dweb:/ipfs/QmXP2cygh2dKnVZraEGzwYbsZ7VBP3ctBKyVkJE2tEgWWE"
+				"bzz-raw://2bd9d6ad166b46e5f938f0d09db1466c3640d35a393e392d43c61ee94bafbec3",
+				"dweb:/ipfs/Qmab3JARWX4CGTPzC8hzML31RiedvJ4dwTQum4RnumXvNv"
 			]
 		}
 	},

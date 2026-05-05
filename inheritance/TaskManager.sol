@@ -4,6 +4,7 @@ pragma solidity ^0.8.30;
 import "./BaseTaskManager.sol";
 
 contract TaskManager is BaseTaskManager {
+    mapping(uint => uint) public point;
     enum Status { Open, InProgress, Done }
     Status public globalStatus;
 
@@ -14,7 +15,7 @@ contract TaskManager is BaseTaskManager {
     }
 
     function addTaskWithPoints(string memory text, uint points) public {
-        require(points >= 100, unicode"Оценка не может превысить 100 баллов!");
+        require(points <= 100, unicode"Оценка не может превысить 100 баллов!");
         super.addTask(text);
         totalPoints += points;
     }
@@ -23,8 +24,8 @@ contract TaskManager is BaseTaskManager {
         super.markDone(index);
     }
 
-    // function getTaskk(uint index) public view override returns(string memory, bool, uint) {
-    //     Task memory task = taski[index];
-    //     return(Task(task.text, task.done, task.points));
-    // }
+    function getTask(uint index) public view override returns(string memory, bool, uint) {
+        Task memory task = taski[index];
+        return (Task(task.text, task.done), points);
+    }
 }

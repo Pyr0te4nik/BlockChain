@@ -13,18 +13,19 @@ contract BaseTaskManager {
     mapping (uint => Task) public tasks;
 
     function addTask(string memory text) public virtual {
-        taskCount++;
+        uint id = taskCount++;
+        Task storage t = tasks[id];
+        t.text = text;
         taski.push(Task(text, false));
     }
 
     function getTask(uint index) public view virtual returns (string memory, bool) {
-        Task memory task = taski[index];
+        Task memory task = tasks[index];
         return (task.text, task.done);
     }
 
     function markDone(uint index) public virtual {
-        taski[index].done = true;
+        taski[index].done = !tasks[index].done;
+        tasks[index].done = !tasks[index].done;
     }
-
-
 }

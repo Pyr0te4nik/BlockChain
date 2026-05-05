@@ -145,11 +145,11 @@
 	},
 	"sources": {
 		"BaseTaskManager.sol": {
-			"keccak256": "0xfc2ef7e4ff4355160d3d6bbdf503a036bbeb8d8225be50dbfda04c9c025a7337",
+			"keccak256": "0xd42ea4e5a1c2a65a9fdafbcd5b256199d008b9f8981fcc458fe37ccef9080624",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://76ca4d2d5fef003c3968d711453721fac7e2a5ae8143a717871133e45d4b4a4f",
-				"dweb:/ipfs/QmVZdpprtgGWwoxEwJWdDyt6YCkY4q4zgxmzeTPiv1vDXB"
+				"bzz-raw://d67751964fd9fb7b7288955b9da84ee4f00105a2a90df905eeec828f15d7486a",
+				"dweb:/ipfs/QmZNotEKcAz8PcRp6cnHDRwLntW9zoG9P3nNqPjhJNorES"
 			]
 		}
 	},
