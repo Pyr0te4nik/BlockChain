@@ -16,7 +16,7 @@ contract TaskManager is BaseTaskManager {
 
     function addTaskWithPoints(string memory text, uint _points) public {
         require(points <= 100, unicode"Оценка не может превысить 100 баллов!");
-        uint id = tasks.length;
+        uint id = taski.length;
         point[id] = _points;
         super.addTask(text);
         totalPoints += points;
