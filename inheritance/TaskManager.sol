@@ -15,11 +15,11 @@ contract TaskManager is BaseTaskManager {
     }
 
     function addTaskWithPoints(string memory text, uint _points) public {
-        require(points <= 100, unicode"Оценка не может превысить 100 баллов!");
+        require(_points <= 100, unicode"Оценка не может превысить 100 баллов!");
         uint id = taski.length;
-        point[id] = _points;
+        points[id] = _points;
         super.addTask(text);
-        totalPoints += points;
+        totalPoints += _points;
     }
 
     function markDone(uint index) public override {
@@ -28,8 +28,7 @@ contract TaskManager is BaseTaskManager {
     }
 
     function getTask(uint index) public view override returns(string memory, bool, uint) {
-        super.getTask(index);
-        Task memory task = taski[index];
+        Task memory task = tasks[index];
         return (task.text, task.done, points[index);
     }
 }
