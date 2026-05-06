@@ -27,7 +27,7 @@ contract TaskManager is BaseTaskManager {
         totalPoints += 10;
     }
 
-    function getTask(uint index) public view override returns(string memory, bool, uint) {
+    function getTask(uint index) public view /*override*/ returns(string memory, bool, uint) {
         Task memory task = tasks[index];
         return (task.text, task.done, points[index);
     }
