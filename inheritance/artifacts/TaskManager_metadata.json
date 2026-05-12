@@ -8,6 +8,35 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "GetTask",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "text",
 						"type": "string"
@@ -27,7 +56,7 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "points",
+						"name": "_points",
 						"type": "uint256"
 					}
 				],
@@ -84,6 +113,25 @@
 				"name": "markDone",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "points",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -202,19 +250,19 @@
 	},
 	"sources": {
 		"BaseTaskManager.sol": {
-			"keccak256": "0xd42ea4e5a1c2a65a9fdafbcd5b256199d008b9f8981fcc458fe37ccef9080624",
+			"keccak256": "0x6228f890857f2e0adcfed76fb93bde5771ba051a08cc1ae4a782859d5b21b5ae",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d67751964fd9fb7b7288955b9da84ee4f00105a2a90df905eeec828f15d7486a",
-				"dweb:/ipfs/QmZNotEKcAz8PcRp6cnHDRwLntW9zoG9P3nNqPjhJNorES"
+				"bzz-raw://dda8ea3ee2147465fe724f0eebe619e7c555d967d21e6b705383c208bd8db1b6",
+				"dweb:/ipfs/QmbvPkieJB4dTvJoxuCbX3ypgGqrL9mwG2SABEpJd3Ch4j"
 			]
 		},
 		"TaskManager.sol": {
-			"keccak256": "0x920098faed2cac0121f95ee07e5d9c0dfd54ddec2f7827381103b427034ce54f",
+			"keccak256": "0x9a9dd627db11745dce5b3987cc38f8f518633fca6d3a5291af84e269114d963c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://977fe9844d47a4b0479b90367f03115a5644d818d3a9c6295886fb0eae551772",
-				"dweb:/ipfs/QmNaXww128KZqdjpobG8ivC3UXsadXyKToW3kT6nDuj5Gk"
+				"bzz-raw://4e32de38ec676bd7b088e070a90ad12eb99bcd6af4253fb8b83f35d359705c95",
+				"dweb:/ipfs/QmWrHioMedvtcJAso8Jr536tQ2Yzox8jErvrNSTSMFeXHv"
 			]
 		}
 	},

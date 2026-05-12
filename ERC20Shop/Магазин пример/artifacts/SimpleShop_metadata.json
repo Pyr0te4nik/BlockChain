@@ -1,0 +1,274 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_token",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "enum SimpleShop.ProductType",
+						"name": "product",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "totalPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "Bought",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum SimpleShop.ProductType",
+						"name": "productType",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "buyProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getProductCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum SimpleShop.ProductType",
+						"name": "product",
+						"type": "uint8"
+					}
+				],
+				"name": "getProductInfo",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "available",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"internalType": "enum SimpleShop.ProductType",
+						"name": "product",
+						"type": "uint8"
+					}
+				],
+				"name": "getPurchaseCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "products",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "available",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "enum SimpleShop.ProductType",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"name": "purchases",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "token",
+				"outputs": [
+					{
+						"internalType": "contract MyCoolToken",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawTokens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"MyCoolShop.sol": "SimpleShop"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ERC20.sol": {
+			"keccak256": "0x6f05fc719c70808abaf5fa99c1eae193c5ea827506fbfe8ed483bb7a62dd4877",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5d003faba4abbe2500c1ef8cac2d921f67f698fc29dbd522c631cbd73e77e07b",
+				"dweb:/ipfs/QmcAjRCpPfFZv63YLNhPQ323VU2QDrmaiw39XUaxjd1TvW"
+			]
+		},
+		"MyCoolShop.sol": {
+			"keccak256": "0x09d3efec01c9b17dc0c3a8d3f6607b0b054e01da67d677353ff619c07ab810c6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41f20b8faaade65034bc21d309cb9594041d9f89fdb1ed59b905db980aa8153c",
+				"dweb:/ipfs/QmeZNZztwhmrjpqBVxabKoY2WQU3K8FmfnygYPB1q9VqHR"
+			]
+		},
+		"MyCoolToken.sol": {
+			"keccak256": "0xdffe0f35845f161bd4ed3314610eccc5c2c14f061bbf789c78c2223286c05629",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f094866e0b481b78916b34dfd080fd853dc618ba00c50c7b07e965ec70440fa2",
+				"dweb:/ipfs/QmUb3XytigELWnXSYRqNX2mLgJcnEA6tRu2YEHGP2MnMNX"
+			]
+		}
+	},
+	"version": 1
+}

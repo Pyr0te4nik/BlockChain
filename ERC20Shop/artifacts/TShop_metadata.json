@@ -1,0 +1,268 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_buyer",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "enum TShop.ProductType",
+						"name": "product",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "totalPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "Bought",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum TShop.ProductType",
+						"name": "productType",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "buyProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getProductCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum TShop.ProductType",
+						"name": "product",
+						"type": "uint8"
+					}
+				],
+				"name": "getProductInfo",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "available",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"internalType": "enum TShop.ProductType",
+						"name": "product",
+						"type": "uint8"
+					}
+				],
+				"name": "getPurchaseCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "products",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "available",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "enum TShop.ProductType",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"name": "purchases",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "token",
+				"outputs": [
+					{
+						"internalType": "contract ERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawTokens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"YourShop.sol": "TShop"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ERC20.sol": {
+			"keccak256": "0x1e98b4fd3913f7d550aa1475ae703bd23968c3e12577f972edf001b344236f5c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4dc71438adf0e0e42f3c7ae65869c57e2d940bb5cead6cfecfc0350548eaf234",
+				"dweb:/ipfs/QmbaUB7vGVs5x9Vx2mbWdKUrUTbHJWFBSj32qKv4SV8zJH"
+			]
+		},
+		"YourShop.sol": {
+			"keccak256": "0x461c5aa33b9306b550045b3fead0365a5b9721d6990b89827bf12ca096a477a4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f7fa22c8f3eb09f65dd18ceaf64528a559fdeeeb29264c3d24b41d3f79ee7a62",
+				"dweb:/ipfs/QmS7iV9wmruMUESZtVNK1jLoRCawixFR1FjWiEMrL2Ghuk"
+			]
+		},
+		"YourToken.sol": {
+			"keccak256": "0x402322f351f0461744412a06f0c0ddb8899e499d59ae8da74846ee56fb2fcd6c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://19f7a2b77c15776faa8eea2dec4d6638ffae64c44bdfa684817566a798bfb5f2",
+				"dweb:/ipfs/QmVnbjPMRJuiTfmTCcKZFFczJN9gViPsHAkYp3hqSP4nbH"
+			]
+		}
+	},
+	"version": 1
+}
