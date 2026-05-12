@@ -1,0 +1,53 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"PROFI.sol": "Profesional"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ERC20.sol": {
+			"keccak256": "0xe476ab4f55760e316e7a225675b07d7f3e8f36df7d6dda5a9e800382bb6a0f48",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f5c40a5fbf2b16e29a8355e08daebdabbbecaf082c9d2b8de1369ff8246b1265",
+				"dweb:/ipfs/Qma3135ow8VS1G9aTbx97SWJgWo32y8iQdp9nD9s9r38PX"
+			]
+		},
+		"PROFI.sol": {
+			"keccak256": "0xe9197a50e0150a105c025ed0eef746c9370a5c3aca0f19fd73fe6a774de84987",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e58e2d7548642d9db6ee99e941a8f9cecad1b0c1156a16e1d433739a67f67197",
+				"dweb:/ipfs/Qmd9sAru6d5pCpF5Leg9wu6FjCnsd3KLpfXgiJtALsE57P"
+			]
+		}
+	},
+	"version": 1
+}

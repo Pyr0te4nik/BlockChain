@@ -1,0 +1,61 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"DAO.sol": "DAO"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"DAO.sol": {
+			"keccak256": "0x45ef3951ad3c29dffb4c8a5133b73404e9bb9f2c806147753b5f2d0c464fc20c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2d4942d53d329a11f7da01a7a1826b596034c33f574e40675d7fb0307f8ac15c",
+				"dweb:/ipfs/QmStUca7Z1F79NaUx3SByFCequG8XReZ1PcoC3nLXZ4oWS"
+			]
+		},
+		"ERC20.sol": {
+			"keccak256": "0x7cf672d971384807971b1953041acdc85ba5431e4ca8e3e389df19ae6e522fad",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5d3704fdf29d6f4f0454c485550473d49458e3ab849fbbe064e3a873b5212cbc",
+				"dweb:/ipfs/QmaB8bY16cHzmtWy89kgpyPqaCgWM81teNS47GvbVVo6Yh"
+			]
+		},
+		"PROFI.sol": {
+			"keccak256": "0xa8606bc075fbc905177a89ff8a6e61d9c791639bed99b586300a28e2f2441b2d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a7935f879456d0fbeb245a89b1c0f183dc7fde63b8c2aebf12ef87f60ce25cfe",
+				"dweb:/ipfs/QmWzwvj42qex7ph6E1tNWfvqimve1H1xMyGMbmao2qbsNZ"
+			]
+		}
+	},
+	"version": 1
+}
