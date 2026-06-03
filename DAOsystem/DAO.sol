@@ -28,12 +28,12 @@ contract DAO {
     mapping (uint => Proposal) public proposal;
     mapping (uint => mapping (address => bool)) public hasVoted;
     address[] public members;
-    uint public proposalsCounter;
+    uint public proposalsCounter = 0;
 
     event ProposalCreated(uint id, address creator, TypeProposal ProposalType);
     event ProposalExecuted(uint id, address creator);
     event ProposalDeleted(uint id, address creator);
-    event Voted(uint id);
+    event Voted(uint id, address voter, bool vote);
 
     constructor(address token, address[] memory _members) {
         require (token != address(0), unicode"Адрес токена не указан!");
@@ -51,7 +51,7 @@ contract DAO {
         require (legalMember[msg.sender], unicode"Вы не участник DAO!");
 
         uint startProposal = block.timestamp;
-        uint endProposal = votingDuration;
+        uint endProposal = startProposal + votingDuration;
 
         uint id = proposalsCounter++;
 
@@ -70,22 +70,73 @@ contract DAO {
             0,
             false,
             false,
-            true
+            false
         ));
 
         emit ProposalCreated (id, msg.sender, _proposalType);
     }
 
-    function vote() external {
+    function vote(uint proposalId, bool _vote) external {
+        require (proposal[proposalId].creator != address(0), unicode"Голосования не существует!");
+
+        Proposal storage p = proposal[proposalId];
+
+        require (p.executed = false, unicode"Голосование завершено!");
+        require (p.deleted = false, unicode"Голосование удалено!");
+        require (!hasVoted[proposalId][msg.sender], unicode"Ваш голос уже учтен!");
+        require (legalMember[msg.sender], unicode"Вы не участник DAO!");
+        require (block.timestamp < p.timeEndProposal, unicode"Голосование подошло к концу!");
+
+        uint userBalance = PROFI.balanceOf(msg.sender);
+        require (userBalance > 0, unicode"У вас недостаточно токенов!");
+
+        if (_vote) {
+            p.amountVoteYES += userBalance;
+        } else {
+            p.amountVoteNO += userBalance;
+        }
+
+        hasVoted[proposalId][msg.sender] = true;
         
+        emit Voted (proposalId, msg.sender, _vote);
     }
 
-    function deleteProposal() external {
+    function deleteProposal(uint proposalId) external {
+        require (proposal[proposalId].creator != address(0), unicode"Голосования не существует!");
+        require (proposal[proposalId].creator == msg.sender, unicode"Вы не создатель голосования!");
 
+        Proposal storage p = proposal[proposalId];
+
+        require (p.executed = false, unicode"Голосование завершено!");
+        require (p.deleted = false, unicode"Голосование удалено!");
+        require (legalMember[msg.sender], unicode"Вы не участник DAO!");
+        require (block.timestamp < p.timeEndProposal, unicode"Голосование подошло к концу!");
+
+        p.deleted = true;
+
+        emit ProposalDeleted (proposalId, msg.sender);
     }
 
-    function executeProposal() external {
+    function executeProposal(uint proposalId) external {
+        require (proposal[proposalId].creator != address(0), unicode"Голосования не существует!");
+        require (proposal[proposalId].creator == msg.sender, unicode"Вы не создатель голосования!");
 
+        Proposal storage p = proposal[proposalId];
+
+        require (p.executed = false, unicode"Голосование завершено!");
+        require (p.deleted = false, unicode"Голосование удалено!");
+        require (legalMember[msg.sender], unicode"Вы не участник DAO!");
+        require (block.timestamp < p.timeEndProposal, unicode"Голосование подошло к концу!");
+
+        if (p.amountVoteYES > p.amountVoteNO) {
+            p.accepted = true;
+        } else {
+            p.accepted = false;
+        }
+
+        p.executed = true;
+
+        emit ProposalExecuted (proposalId, msg.sender);
     }
 
     function showMembers() public returns (address[] memory) {
