@@ -10,8 +10,6 @@ contract DAO {
         uint idProposal;
         TypeProposal proposalType;
         address creator;
-        address targetAddress;
-        uint amount;
         string description;
         uint timeStartProposal;
         uint timeEndProposal;
@@ -23,7 +21,6 @@ contract DAO {
     }
 
     Professional public PROFI;
-    Proposal[] public proposals;
     mapping (address => bool) public legalMember;
     mapping (uint => Proposal) public proposal;
     mapping (uint => mapping (address => bool)) public hasVoted;
@@ -47,7 +44,7 @@ contract DAO {
         }
     }
     
-    function createProposal(TypeProposal _proposalType, address _targetAddress, uint _amount, uint votingDuration, string memory _description) external {
+    function createProposal(TypeProposal _proposalType, uint votingDuration, string memory _description) external {
         require (legalMember[msg.sender], unicode"Вы не участник DAO!");
 
         uint startProposal = block.timestamp;
@@ -55,23 +52,19 @@ contract DAO {
 
         uint id = proposalsCounter++;
 
-        Proposal storage prop = proposal[id];
-
-        proposals.push(Proposal(
-            id,
-            _proposalType,
-            msg.sender,
-            _targetAddress, 
-            _amount, 
-            _description, 
-            startProposal, 
-            endProposal, 
-            0,
-            0,
-            false,
-            false,
-            false
-        ));
+        proposal[id] = Proposal({
+            idProposal: id,
+            proposalType: _proposalType,
+            creator: msg.sender,
+            description: _description,
+            timeStartProposal: startProposal,
+            timeEndProposal: endProposal,
+            amountVoteYES: 0,
+            amountVoteNO: 0,
+            executed: false,
+            deleted: false,
+            accepted: false
+        });
 
         emit ProposalCreated (id, msg.sender, _proposalType);
     }
@@ -81,8 +74,8 @@ contract DAO {
 
         Proposal storage p = proposal[proposalId];
 
-        require (p.executed = false, unicode"Голосование завершено!");
-        require (p.deleted = false, unicode"Голосование удалено!");
+        require (!p.executed, unicode"Голосование завершено!");
+        require (!p.deleted, unicode"Голосование удалено!");
         require (!hasVoted[proposalId][msg.sender], unicode"Ваш голос уже учтен!");
         require (legalMember[msg.sender], unicode"Вы не участник DAO!");
         require (block.timestamp < p.timeEndProposal, unicode"Голосование подошло к концу!");
@@ -90,10 +83,12 @@ contract DAO {
         uint userBalance = PROFI.balanceOf(msg.sender);
         require (userBalance > 0, unicode"У вас недостаточно токенов!");
 
+        require(PROFI.transfer(address(this), 1000000000000), unicode"Ошибка списания токенов!");
+
         if (_vote) {
-            p.amountVoteYES += userBalance;
+            p.amountVoteYES ++;
         } else {
-            p.amountVoteNO += userBalance;
+            p.amountVoteNO ++;
         }
 
         hasVoted[proposalId][msg.sender] = true;
@@ -107,8 +102,8 @@ contract DAO {
 
         Proposal storage p = proposal[proposalId];
 
-        require (p.executed = false, unicode"Голосование завершено!");
-        require (p.deleted = false, unicode"Голосование удалено!");
+        require (!p.executed, unicode"Голосование завершено!");
+        require (!p.deleted, unicode"Голосование удалено!");
         require (legalMember[msg.sender], unicode"Вы не участник DAO!");
         require (block.timestamp < p.timeEndProposal, unicode"Голосование подошло к концу!");
 
@@ -123,8 +118,8 @@ contract DAO {
 
         Proposal storage p = proposal[proposalId];
 
-        require (p.executed = false, unicode"Голосование завершено!");
-        require (p.deleted = false, unicode"Голосование удалено!");
+        require (!p.executed, unicode"Голосование завершено!");
+        require (!p.deleted, unicode"Голосование удалено!");
         require (legalMember[msg.sender], unicode"Вы не участник DAO!");
         require (block.timestamp < p.timeEndProposal, unicode"Голосование подошло к концу!");
 
@@ -139,7 +134,7 @@ contract DAO {
         emit ProposalExecuted (proposalId, msg.sender);
     }
 
-    function showMembers() public returns (address[] memory) {
+    function showMembers() public view returns (address[] memory) {
         require(legalMember[msg.sender], unicode"Только участники DAO могут посмотреть список!");
         return members;
     }
